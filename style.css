@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Elsie+Swash+Caps&display=swap");
+
+:root {
+    --color-brown: #53350e;
+    --color-yellow: #f8c20d;
+    --font-fancy: "Elsie Swash Caps", cursive;
+    --font-fancy-weight: 400;
+    --font-regular: "Helvetica", sans-serif;
+    --spacing: 2rem;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    position: relative;
+}
+
+:root {
+    background: var(--color-brown);
+    color: white;
+    font-family: var(--font-regular);
+    width: 100%;
+    height: 100%;
+}
+body {
+    min-height: 100%;
+}
+.mainHeader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+    padding: var(--spacing);
+}
+.mainTitle {
+    font-family: var(--font-fancy);
+    font-weight: var(--font-fancy-weight);
+    color: var(--color-yellow);
+    margin: 0;
+    padding: 0;
+}
+
+.sliderNav {
+    position: fixed;
+    bottom: var(--spacing);
+    left: var(--spacing);
+    z-index: 10;
+    font-size: 2rem;
+}
+
+.sliderNavButton {
+    appearance: none;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    border: none;
+    text-transform: uppercase;
+}
+
+.slideImages {
+    width: 100vw;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    .slideImage {
+        grid-area: 1 / 1;
+        display: block;
+        max-width: 100%;
+    }
+}
+
+.slider {
+    display: grid;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.slide,
+.sliderSlides {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    > * {
+        grid-area: 1 / 1;
+    }
+}
+
+.slideImage {
+    will-change: transform;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3);
+    --clip-path-duration: var(--full-state, 1.4s) var(--slides-state, 2.5s);
+}
